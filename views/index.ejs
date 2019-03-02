@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>TODO LIST</h1>
+        <h3><%= todos.length === 0 ? 'Sorry I guess you have nothing to do!' : '' %></h3>
+
+    
+    <ul>
+    <% todos.forEach(function(t) { %>
+      <ul>
+        <li><%= t.item %> - <%= t.done ? 'Done' : 'Not Done' %> </li>
+      </ul>
+      <% }); %>
+
+  </ul>
+    <form action= "/" method="POST">
+      <input type="text" name="data" value="">
+      <button type="submit">Add TODO</button>
+    </form>
+  </body>
+</html>
